@@ -7,10 +7,38 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <% if notice.present? || alert.present? %>
+        <div aria-live="polite" aria-atomic="true" class="toaster">
+          <div class="toast-container p-3">
+            <% flash.each do |type, msg| %>
+              <div class="toast <%= type == 'alert' ? 'bg-danger' : 'bg-primary' %>" role='alert' aria-atomic="true" aria-live="assertive">
+                <div class="d-flex">
+                  <div class="toast-body">
+                    <div>
+                      <%= msg %>
+                    </div>
+                  </div>
+                  <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </header>
+
+    <main class="<%= controller.controller_name %>">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
+
+    <footer></footer>
   </body>
 </html>

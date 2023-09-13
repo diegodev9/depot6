@@ -33,6 +33,9 @@ gem 'autoprefixer-rails'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  gem 'factory_bot_rails', '~> 6.2'
+  gem 'rspec-rails', '~> 6.0', '>= 6.0.3'
 end
 
 group :development do
@@ -40,10 +43,29 @@ group :development do
   gem 'web-console', '>= 4.1.0'
   # Display performance information such as SQL time and flame graphs for each request in your browser.
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
-  gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
+  gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'annotate', '~> 3.2'
+  gem 'bullet'
+  gem 'guard', '~> 2.18'
+  gem 'guard-rspec', '~> 4.7', '>= 4.7.3', require: false
+  gem 'letter_opener'
+  gem 'rubocop', '~> 1.48', '>= 1.48.1', require: false
+  gem 'rubocop-performance', '~> 1.16', require: false
+  gem 'rubocop-rails', '~> 2.18', require: false
+  gem 'rubocop-rspec', '~> 2.19', require: false
+end
+
+group :test do
+  gem 'capybara', '~> 3.39', '>= 3.39.2'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner', '~> 2.0', '>= 2.0.2'
+  gem 'faker', '~> 3.1', '>= 3.1.1'
+  gem 'shoulda-matchers', '~> 5.3'
+  gem 'simplecov', '~> 0.22.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Depot6</title>
+    <title>Depot6 - Pragprog books online store</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,32 +12,52 @@
   </head>
 
   <body>
-    <header>
-      <% if notice.present? || alert.present? %>
-        <div aria-live="polite" aria-atomic="true" class="toaster">
-          <div class="toast-container p-3">
-            <% flash.each do |type, msg| %>
-              <div class="toast <%= type == 'alert' ? 'bg-danger' : 'bg-primary' %>" role='alert' aria-atomic="true" aria-live="assertive">
-                <div class="d-flex">
-                  <div class="toast-body">
-                    <div>
-                      <%= msg %>
+    <div class="row">
+      <div class="col-2 bg-green-dark">
+        <header class="main">
+          <%= image_tag 'logo.png', alt: 'The Pragmatic Bookshelf', class: 'img-fluid logo' %>
+          <h1><%= @page_title %></h1>
+
+          <section class="content">
+            <nav class="side_nav">
+              <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/questions">Questions</a></li>
+                <li><a href="/news">News</a></li>
+                <li><a href="/contact">Contact</a></li>
+              </ul>
+            </nav>
+          </section>
+
+          <% if notice.present? || alert.present? %>
+            <div aria-live="polite" aria-atomic="true" class="toaster">
+              <div class="toast-container p-3">
+                <% flash.each do |type, msg| %>
+                  <div class="toast <%= type == 'alert' ? 'bg-danger' : 'bg-primary' %>" role='alert' aria-atomic="true" aria-live="assertive">
+                    <div class="d-flex">
+                      <div class="toast-body">
+                        <div>
+                          <%= msg %>
+                        </div>
+                      </div>
+                      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                     </div>
                   </div>
-                  <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-                </div>
+                <% end %>
               </div>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    </header>
-
-    <main class="<%= controller.controller_name %>">
-      <div class="container">
-        <%= yield %>
+            </div>
+          <% end %>
+        </header>
       </div>
-    </main>
+
+      <div class="col-10">
+        <main class="<%= controller.controller_name %>">
+          <div class="container">
+            <%= yield %>
+          </div>
+        </main>
+      </div>
+    </div>
 
     <footer></footer>
   </body>

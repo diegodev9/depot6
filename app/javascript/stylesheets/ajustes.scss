@@ -18,6 +18,39 @@
 }
 // toast
 
+.btn-success {
+  color: #fff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  ul {
+    list-style: none;
+
+    a {
+      font-size: 1.2rem;
+      color: #228822;
+      text-decoration: none;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.bg-green-dark {
+  background-color: #114411;
+}
+.bg-green-light {
+  background-color: #228822;
+}
+
 //products
 .products {
   margin: 0;
@@ -70,3 +103,51 @@
   }
 }
 //products
+
+//store
+.store {
+  max-width: 80em;
+
+  h1 {
+    border-bottom: 4px solid #114411;
+    padding: 15px 0;
+  }
+
+  ul.catalog {
+    border-top: solid 0.250em;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 1em;
+      margin: 0;
+      border-bottom: solid thin #ddd;
+      // This makes sure our <li> has enough height
+      // to hold the entire image, since it's floated
+      &::after {
+        clear: both;
+        content: " ";
+        display: block;
+      }
+
+      img {
+        float: left;
+        padding: 1em;
+        margin-right: 1em;
+        margin-bottom: 1em;
+        box-shadow: 0.176em 0.176em 0.354em 0px rgba(0, 0, 0, 0.75);
+      }
+
+      .price {
+        font-size: 1.414em;
+      }
+    }
+  }
+  .product {
+    margin-top: 50px;
+    padding-bottom: 50px;
+    border-bottom: 2px solid #114411;
+  }
+}
+//store

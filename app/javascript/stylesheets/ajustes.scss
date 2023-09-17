@@ -22,12 +22,6 @@
   color: #fff;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .main {
   ul {
     list-style: none;
@@ -106,8 +100,6 @@ body {
 
 //store
 .store {
-  max-width: 80em;
-
   h1 {
     border-bottom: 4px solid #114411;
     padding: 15px 0;

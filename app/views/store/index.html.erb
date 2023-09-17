@@ -1,23 +1,25 @@
 <h1>Your Pragmatic Catalog</h1>
 
 
-<% @products.each do |product| %>
-  <div class="product" data='product-<%= product.id %>'>
-    <div class="row">
-      <div class="col-lg-2">
-        <div class="catalog-img">
-          <%= image_tag(product.image_url, class: 'img-fluid') %>
+<% cache @products do %>
+  <% @products.each do |product| %>
+    <% cache product do %>
+      <div class="row product" data='product-<%= product.id %>'>
+        <div class="col-lg-2">
+          <div class="catalog-img">
+            <%= image_tag(product.image_url, class: 'img-fluid') %>
+          </div>
         </div>
-      </div>
-      <div class="col-10">
-        <div class="catalog-content">
-          <h2><%= product.title %></h2>
-          <p><%= sanitize(product.description) %></p>
-          <div class="price">
-            <%= number_to_currency(product.price) %>
+        <div class="col-10">
+          <div class="catalog-content">
+            <h2><%= product.title %></h2>
+            <p><%= sanitize(product.description) %></p>
+            <div class="price">
+              <%= number_to_currency(product.price) %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    <% end %>
+  <% end %>
 <% end %>

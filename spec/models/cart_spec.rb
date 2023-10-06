@@ -7,6 +7,7 @@
 #  updated_at :datetime         not null
 #
 require 'rails_helper'
+require 'support/database_cleaner'
 
 RSpec.describe Cart, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"

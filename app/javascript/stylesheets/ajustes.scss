@@ -16,10 +16,15 @@
     width: unset
   }
 }
+
 // toast
 
 .btn-success {
   color: #fff;
+}
+
+.row {
+  width: 100%;
 }
 
 .main {
@@ -41,34 +46,49 @@
 .bg-green-dark {
   background-color: #114411;
 }
+
 .bg-green-light {
   background-color: #228822;
+}
+
+.side_nav {
+  ul {
+    margin-top: 25px;
+    li {
+      margin: 10px 0;
+    }
+  }
 }
 
 //products
 .products {
   margin: 0;
   padding: 0.5em;
+
   a {
     padding: 0.354em 0.5em;
     border-radius: 0.354em;
   }
+
   table {
     border-collapse: collapse;
   }
+
   td {
     padding: 0.5em;
     margin: 0;
   }
+
   tr.list_line_odd {
     background-color: #effeef;
   }
+
   td.image {
-            // Hide this on mobile devices
+    // Hide this on mobile devices
     display: none;
-            // Assume anything bigger than 30em
-            // is a non-mobile device and can
-            // fit the image.
+    // Assume anything bigger than 30em
+    // is a non-mobile device and can
+    // fit the image.
     @media (min-width: 30em) {
       display: block;
       img {
@@ -76,26 +96,31 @@
       }
     }
   }
+
   td.description {
     h1 {
       font-size: 1.4em;
     }
   }
+
   td.actions {
     ul {
       padding: 0;
       list-style: none;
+
       li {
         padding: 0.5em 0.5em;
       }
     }
   }
+
   tfoot {
     td {
       padding: 0.5em 0;
     }
   }
 }
+
 //products
 
 //store
@@ -105,7 +130,7 @@
     padding: 15px 0;
   }
 
-  ul.catalog {
+  .catalog {
     border-top: solid 0.250em;
     list-style: none;
     padding: 0;
@@ -136,10 +161,54 @@
       }
     }
   }
+
+  .catalog-content {
+    .price {
+      display: flex;
+      align-items: center;
+
+      .button_to {
+        margin-left: 15px;
+      }
+    }
+  }
+
   .product {
     margin-top: 50px;
     padding-bottom: 50px;
     border-bottom: 2px solid #114411;
   }
 }
+
 //store
+
+//cart
+#cart {
+  h2 {
+    margin-top: 0;
+  }
+
+  background: white;
+  border-radius: 0.5em;
+  margin: 1em;
+  padding: 1.414em;
+  @media (min-width: 30em) {
+    margin: 0; // desktop doesn't need this margin
+  }
+}
+
+@keyframes line-item-highlight {
+  0% {background: #8f8;}
+  100% {background: none;}
+}
+
+.line-item-highlight {
+  animation: line-item-highlight 2s linear
+}
+.actions.buttons {
+  display: flex;
+  .btn {
+    margin-right: 15px;
+  }
+}
+//cart

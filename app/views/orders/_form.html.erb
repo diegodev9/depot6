@@ -1,0 +1,39 @@
+<%= form_with(model: order) do |form| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+        <% order.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :name, class: 'col-form-label-sm' %>
+    <%= form.text_field :name, size: 40, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :address, class: 'col-form-label-sm' %>
+    <%= form.text_area :address, rows: 3, cols: 40, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :email, class: 'col-form-label-sm' %>
+    <%= form.text_field :email, size: 40, class: 'form-control' %>
+  </div>
+
+  <!--<div class="mb-3">
+    <%#= form.label :pay_type, class: 'col-form-label-sm' %>
+    <%#= form.select :pay_type, options_for_select(Order.pay_types.keys), {prompt:'Select a payment method'}, class: 'form-select' %>
+  </div>-->
+
+  <div id="pay-type-component"></div>
+
+  <div class="actions">
+    <%= form.submit 'Place Order', class: 'btn btn-primary btn-sm' %>
+  </div>
+<% end %>

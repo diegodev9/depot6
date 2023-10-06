@@ -12,15 +12,18 @@
   </head>
 
   <body>
-    <div class="container-fluid p-0">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-2 bg-green-dark p-0">
+        <div class="col-xl-2 col-md-3 bg-green-dark">
           <header class="main">
             <%= image_tag 'logo.png', alt: 'The Pragmatic Bookshelf', class: 'img-fluid logo' %>
             <h1><%= @page_title %></h1>
 
             <section class="content">
               <nav class="side_nav">
+                <div id="cart" class="carts">
+                  <%= render_if @cart && @cart.line_items.any?, @cart %>
+                </div>
                 <ul>
                   <li><a href="/">Home</a></li>
                   <li><a href="/questions">Questions</a></li>
@@ -51,7 +54,7 @@
           </header>
         </div>
 
-        <div class="col-10 p-0">
+        <div class="col-xl-10 col-md-9 p-0">
           <main class="<%= controller.controller_name %>">
            <div class="container">
              <%= yield %>

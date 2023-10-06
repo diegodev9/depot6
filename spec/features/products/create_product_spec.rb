@@ -3,6 +3,7 @@ require 'support/database_cleaner'
 
 RSpec.describe 'Create product', type: :feature do
   let(:product) { build(:product, title: 'New brand product example 1') }
+  let(:line_item) { 0 }
 
   before do
     product

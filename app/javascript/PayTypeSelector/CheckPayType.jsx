@@ -9,7 +9,7 @@ class CheckPayType extends React.Component {
                     <input type="password" name="order[routing_number]" id="order_routing_number" className="form-control"/>
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="order_account_number" className="col-form-label-sm">Account</label>
+                    <label htmlFor="order_account_number" className="col-form-label-sm">Account #</label>
                     <input type="text" name="order[account_number]" id="order_account_number" className="form-control"/>
                 </div>
             </div>

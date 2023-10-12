@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'admin/index', to: 'admin#index'
+  controller 'session' do
+    get 'login', to: 'session#new'
+    post 'login', to: 'session#create'
+    delete 'logout', to: 'session#destroy'
+  end
   resources :users
   root to: 'store#index', as: 'store_index'
   resources :orders

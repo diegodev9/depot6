@@ -1,0 +1,19 @@
+<section class="depot_form">
+  <% if flash[:alert] %>
+    <aside class="notice"><%= flash[:alert] %></aside>
+  <% end %>
+  <%= form_tag do %>
+    <h2>Please Log In</h2>
+    <div class="mb-3">
+      <%= label_tag :name, 'Name:', class: 'col-form-label-sm' %>
+      <%= text_field_tag :name, params[:name], class: 'form-control' %>
+    </div>
+    <div class="mb-3">
+      <%= label_tag :password, 'Password:', class: 'col-form-label-sm' %>
+      <%= password_field_tag :password, params[:password], class: 'form-control' %>
+    </div>
+    <div class="actions mb-3">
+      <%= submit_tag "Login", class: 'btn btn-sm btn-primary' %>
+    </div>
+  <% end %>
+</section>

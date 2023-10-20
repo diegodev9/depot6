@@ -20,7 +20,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -52,7 +52,7 @@ group :development do
   gem 'bullet'
   gem 'guard', '~> 2.18'
   gem 'guard-rspec', '~> 4.7', '>= 4.7.3', require: false
-  gem 'letter_opener'
+  gem 'letter_opener', '~> 1.8', '>= 1.8.1'
   gem 'rubocop', '~> 1.48', '>= 1.48.1', require: false
   gem 'rubocop-performance', '~> 1.16', require: false
   gem 'rubocop-rails', '~> 2.18', require: false
@@ -64,6 +64,7 @@ group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner', '~> 2.0', '>= 2.0.2'
   gem 'faker', '~> 3.1', '>= 3.1.1'
+  gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 5.3'
   gem 'simplecov', '~> 0.22.0'
 end

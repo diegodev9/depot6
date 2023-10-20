@@ -69,6 +69,7 @@ GEM
     autoprefixer-rails (10.4.15.0)
       execjs (~> 2)
     base64 (0.1.1)
+    bcrypt (3.1.19)
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
@@ -308,8 +309,13 @@ GEM
       rubocop (~> 1.33)
       rubocop-capybara (~> 2.17)
     ruby-progressbar (1.13.0)
+    rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
+    selenium-webdriver (4.12.0)
+      rexml (~> 3.2, >= 3.2.5)
+      rubyzip (>= 1.2.2, < 3.0)
+      websocket (~> 1.0)
     semantic_range (3.0.0)
     shellany (0.0.1)
     shoulda-matchers (5.3.0)
@@ -350,6 +356,7 @@ GEM
       railties (>= 5.2)
       semantic_range (>= 2.3.0)
     webrick (1.8.1)
+    websocket (1.2.9)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -363,6 +370,7 @@ PLATFORMS
 DEPENDENCIES
   annotate (~> 3.2)
   autoprefixer-rails
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.4)
   bullet
   byebug
@@ -374,7 +382,7 @@ DEPENDENCIES
   guard (~> 2.18)
   guard-rspec (~> 4.7, >= 4.7.3)
   jbuilder (~> 2.7)
-  letter_opener
+  letter_opener (~> 1.8, >= 1.8.1)
   listen (~> 3.3)
   pg (~> 1.1)
   puma (~> 5.0)
@@ -386,6 +394,7 @@ DEPENDENCIES
   rubocop-rails (~> 2.18)
   rubocop-rspec (~> 2.19)
   sassc
+  selenium-webdriver
   shoulda-matchers (~> 5.3)
   simplecov (~> 0.22.0)
   spring
@@ -398,4 +407,4 @@ RUBY VERSION
    ruby 3.1.2p20
 
 BUNDLED WITH
-   2.4.15
+   2.4.20

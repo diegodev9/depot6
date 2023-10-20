@@ -1,0 +1,22 @@
+<h2>Your Cart</h2>
+
+<table class="table-responsive">
+  <%= render(cart.line_items) %>
+  <tfoot>
+  <tr>
+    <th colspan="2">Total:</th>
+    <td class="price border-top"><b><%= number_to_currency(cart.total_price) %></b></td>
+  </tr>
+  </tfoot>
+</table>
+
+<div class="actions buttons">
+  <% if cart.line_items.count > 0  %>
+    <%= button_to cart, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm btn-empty-cart' do %>
+      <i class="fas fa-trash"></i>
+    <% end %>
+    <%= button_to new_order_path, method: :get, class: 'btn btn-warning btn-sm checkout' do %>
+      <i class="fas fa-cash-register"></i>
+    <% end %>
+  <% end %>
+</div>

@@ -1,10 +1,14 @@
 require 'rails_helper'
 require 'support/database_cleaner'
+require 'authentication_helpers'
 
 RSpec.describe 'Create product', type: :feature do
+  let(:user) { create(:user) }
   let(:product) { build(:product, title: 'New brand product example 1') }
+  let(:line_item) { 0 }
 
   before do
+    login_as(user)
     product
   end
 

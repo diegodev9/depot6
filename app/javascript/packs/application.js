@@ -44,3 +44,5 @@ import 'jquery/dist/jquery.min'
 //import '@nathanvda/cocoon'
 
 import './custom'
+require("trix")
+require("@rails/actiontext")
